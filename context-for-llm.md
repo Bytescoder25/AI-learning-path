@@ -10,15 +10,17 @@
 - Core stack: **Node.js, Express, MongoDB, PostgreSQL, AWS EC2, Docker, Git, Linux**.
 - Not a data scientist, not from an ML/math background — I'm approaching AI purely as a backend engineer adding a new capability to my existing skill set.
 
-## My 5-year career goal
+## My 1-year goal vs 5-year goal
 
-Over the next 5 years I want to become an **Applied AI / AI-Product backend engineer** — someone who builds real products **on top of existing LLMs**, not someone who builds or trains models.
+**1-year goal:** learn and become an **Applied AI / AI-Product backend engineer** — someone who builds real products **on top of existing LLMs**, not someone who builds or trains models. This is the near-term target the 24-week plan below is scoped to.
 
-**Explicitly what I want:** RAG (retrieval-augmented generation) and **consumer-level fine-tuning** (using a provider's fine-tuning API/endpoint to specialize an existing model — no training theory, no math).
+**5-year goal:** continue the career more broadly as an **AI Engineer** — not narrowly locked to "Applied AI Engineer" forever. The 1-year Applied-AI scope is a deliberate starting foundation, not necessarily the permanent ceiling on scope for the full 5 years — I may grow into a broader AI Engineer role/skillset beyond just the application layer over that longer horizon.
 
-**Explicitly what I do NOT want:** training models from scratch, deep learning theory, PyTorch/TensorFlow internals, linear algebra/calculus/statistics for ML, pre-training foundation models, heavy/research-grade fine-tuning.
+**Explicitly what I want (for the 1-year plan):** RAG (retrieval-augmented generation) and **consumer-level fine-tuning** (using a provider's fine-tuning API/endpoint to specialize an existing model — no training theory, no math).
 
-This boundary is **deliberate, not a gap to "fix."** Any advice should stay on the application/product layer — treat AI as a backend dependency (like a database or a third-party API), not a research subject.
+**Explicitly what I do NOT want (for the 1-year plan):** training models from scratch, deep learning theory, PyTorch/TensorFlow internals, linear algebra/calculus/statistics for ML, pre-training foundation models, heavy/research-grade fine-tuning.
+
+This boundary is **deliberate for the 1-year horizon, not a gap to "fix."** Near-term advice should stay on the application/product layer — treat AI as a backend dependency (like a database or a third-party API), not a research subject. Don't assume this boundary is permanent for the full 5-year horizon — re-confirm before assuming it still applies once the 1-year plan is complete.
 
 ## Role/title clarification (discussed and settled)
 
