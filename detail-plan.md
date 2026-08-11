@@ -25,6 +25,10 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 - [ ] Cost & latency: read the pricing page for your chosen provider(s); calculate cost per 1K requests for a typical prompt+completion size.
 - [ ] Read/skim: DeepLearning.AI short course "ChatGPT Prompt Engineering for Developers."
 
+**Resources (free)**
+- [ChatGPT Prompt Engineering for Developers](https://www.deeplearning.ai/short-courses/) — DeepLearning.AI, ~1.5hr, free to watch (labs/cert need Pro).
+- **AI Prompting for Everyone** — DeepLearning.AI, ~7hr, free to watch, broader prompting fundamentals.
+
 **Build (small daily experiments, not the full project yet)**
 - [ ] Get API keys set up (Anthropic and/or OpenAI) in a `.env` file, never committed.
 - [ ] Write a 20-line Node.js script that calls the model with a plain prompt and prints the response.
@@ -48,6 +52,11 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 - [ ] RAG architecture end-to-end: chunking strategies (fixed-size, sentence-aware, recursive), embedding generation, vector search (ANN/cosine), retrieval, re-ranking, and citation/attribution back to source chunks.
 - [ ] pgvector: read the extension docs — `CREATE EXTENSION vector;`, the `vector` column type, distance operators (`<->`, `<=>`), and index types (`ivfflat` vs `hnsw`).
 - [ ] Read/skim: DeepLearning.AI "Building Systems with the ChatGPT API."
+
+**Resources (free)**
+- [Krish Naik — Introduction to Understanding RAG](https://www.classcentral.com/course/youtube-introduction-to-undertsanding-rag-retrieval-augmented-generation-480511) — free 21-min YouTube primer on RAG.
+- "Complete RAG Tutorial 2026" — free YouTube walkthrough building a RAG app from scratch.
+- [pgvector GitHub README](https://github.com/pgvector/pgvector) — official docs, no dedicated free video course exists for pgvector specifically.
 
 **Build**
 - [ ] Install PostgreSQL locally (or use your existing instance) + enable pgvector (`CREATE EXTENSION IF NOT EXISTS vector;`).
@@ -114,6 +123,10 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 - [ ] **Pydantic** — schema/model validation, equivalent to `zod`/Joi in the Node world.
 - [ ] Explicitly skip: pandas, numpy, any ML/math library — not needed for this plan.
 
+**Resources (free)**
+- [freeCodeCamp — FastAPI Course for Beginners](https://www.classcentral.com/course/freecodecamp-fastapi-course-for-beginners-104922) — free, full crash course.
+- Cursa's free Python FastAPI course (Turtle Code) — covers async, validation, OpenAPI docs, no cost.
+
 **Build**
 - [ ] Set up a Python virtual env and a minimal FastAPI app (`uvicorn main:app --reload`).
 - [ ] Port 2–3 of your simple Node scripts from Week 1 to Python (call an LLM API, stream a response) — this cements the syntax fast.
@@ -136,6 +149,9 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 - [ ] **When NOT to use an agent** — a single well-crafted prompt or a deterministic pipeline is often better/cheaper/more reliable than a multi-step agent. Be able to articulate this trade-off (it's an interview-favorite question).
 - [ ] Read/skim: DeepLearning.AI "Functions, Tools and Agents with LangChain."
 
+**Resources (free)**
+- [AI Agents in LangGraph — DeepLearning.AI](https://www.deeplearning.ai/courses/ai-agents-in-langgraph) — free to watch; the first half has you build an agent from scratch (matches this week), second half rebuilds it with LangGraph (matches Week 7).
+
 **Build**
 - [ ] Write a minimal agent loop by hand (no framework yet) in Node or Python: define 2 tools (e.g. `queryDatabase`, `callExternalApi`), let the model pick one, execute it, feed the result back, loop until the model returns a final answer.
 - [ ] Add a max-step guard (e.g. stop after 5 iterations) so a misbehaving loop can't run forever.
@@ -152,6 +168,10 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 **Learn**
 - [ ] LangGraph.js (or Vercel AI SDK's built-in agent/tool-loop primitives) — how it formalizes the loop you hand-built in Week 6: nodes, edges, state, conditional routing between steps.
 - [ ] Multi-step flow design: how to break a task into discrete steps with clear inputs/outputs instead of one giant prompt.
+
+**Resources (free)**
+- [AI Agents in LangGraph — DeepLearning.AI](https://www.deeplearning.ai/courses/ai-agents-in-langgraph) — same course as Week 6; this is the "rebuild with LangGraph" half.
+- Great Learning's free LangGraph course — covers graph-based workflows and multi-agent patterns, no cost.
 
 **Build (Project 2, Part A — Agentic backend service)**
 - [ ] Scaffold the service (Node/Express, reusing Month 1 patterns) or FastAPI if you want extra Python reps — your call, but be consistent with what you'll extend in Month 3.
@@ -199,6 +219,9 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 - [ ] Transport basics: stdio vs HTTP/SSE transports for MCP servers.
 - [ ] Skim the `@modelcontextprotocol/sdk` (TypeScript) docs and a couple of example open-source MCP servers to see real patterns.
 
+**Resources (free)**
+- [MCP: Build Rich-Context AI Apps with Anthropic — DeepLearning.AI](https://www.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic) — taught by Anthropic's Head of Technical Education, ~1h48m, free to watch.
+
 **Build**
 - [ ] Install `@modelcontextprotocol/sdk` and run one of the official example servers locally to see the protocol in action (use the MCP Inspector tool to poke at it).
 - [ ] Sketch (on paper/markdown) which of your Month 1–2 capabilities make sense as MCP tools (e.g. "query documents," "run agent task," "search chunks").
@@ -237,6 +260,9 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 **Learn**
 - [ ] Evaluation approaches: golden test sets (input → expected output/behavior), automated scoring via **RAGAS** (for RAG-specific metrics: faithfulness, answer relevancy, context precision/recall) or **LLM-as-judge** (a second model scores the output against a rubric).
 
+**Resources (free)**
+- [Langfuse — Beginner's Guide to RAG Evaluation with Langfuse and Ragas](https://langfuse.com/guides) — free official guide covering both tools together.
+
 **Build**
 - [ ] Create a test set of 15–30 realistic queries for Project 1 (RAG) with expected answers/source docs.
 - [ ] Wire up RAGAS (or a simple custom LLM-as-judge script) to score Project 1's RAG responses against this set.
@@ -253,6 +279,10 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 **Learn**
 - [ ] Tracing concepts: spans, traces, and what to capture per LLM call (latency, token usage/cost, model, prompt version, success/failure).
 - [ ] Pick a tool: **Langfuse** or **LangSmith** (hosted/open-source tracing for LLM apps) — or, consistent with "reuse your stack," a custom logger writing structured events to Postgres + a small dashboard page.
+
+**Resources (free)**
+- [PyImageSearch — RAG Observability with Langfuse, vLLM, and FAISS](https://pyimagesearch.com/2026/06/15/rag-observability-with-langfuse-vllm-and-faiss/) — free tutorial series instrumenting a RAG pipeline with tracing.
+- [Langfuse guides](https://langfuse.com/guides) — official, free, includes tracing + evaluation walkthroughs.
 
 **Build**
 - [ ] Instrument Project 1 (RAG) and Project 2 (agent) calls with tracing — every model call and tool call gets a span with latency/cost/tokens.
@@ -286,6 +316,9 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
   - [ ] LLM09 Overreliance
   - [ ] LLM10 Model Theft
 
+**Resources (free)**
+- [RansomLeak — 10 free OWASP LLM Top 10 exercises](https://ransomleak.com/blog/owasp-llm-top-10-training-course/) — free, no signup, hands-on exercise per category.
+
 **Build**
 - [ ] Audit Project 1 and Project 2 against this list — write a short markdown "security notes" doc per project listing which risks apply and current mitigation status.
 - [ ] Fix at least one real gap you find (e.g. unescaped model output rendered somewhere, or a tool with excessive permissions).
@@ -302,6 +335,9 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 - [ ] Input validation for LLM apps: detecting/blocking obvious prompt injection patterns, length limits, content filtering.
 - [ ] Output validation: schema-checking structured outputs before using them, sanitizing before rendering (XSS-equivalent risk when model output reaches a UI).
 - [ ] Guardrail patterns: max-step ceilings (already partly done via agent loop limits), cost ceilings per user/session, allow/deny lists for tool actions, PII redaction (regex/NER-lite before logging or sending to the model), human-in-the-loop approval gates for risky actions.
+
+**Resources (free)**
+- No dedicated free video course for LLM guardrails specifically — this week is docs-driven. Reuse the mitigation notes from Week 13's [RansomLeak OWASP exercises](https://ransomleak.com/blog/owasp-llm-top-10-training-course/) and skim the guardrail-pattern sections of the [LiteLLM docs](https://docs.litellm.ai/docs/) (used again in Week 15).
 
 **Build**
 - [ ] Add an input guardrail middleware to Project 1/2: reject or flag suspicious inputs (basic injection heuristics, length caps).
@@ -327,6 +363,9 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 - [ ] Fallback strategy: what to do when a provider errors/times out (fallback to a secondary provider/model).
 - [ ] Retries with backoff at the gateway level (distinct from per-request retries you already built in Month 1).
 - [ ] Skim LiteLLM docs (proxy/gateway options) — decide whether to use LiteLLM or roll your own (plan default: roll your own, since it's better portfolio signal for "pure backend engineering").
+
+**Resources (free)**
+- [LiteLLM docs — Tutorials](https://docs.litellm.ai/docs/) — free, official, step-by-step on proxy setup, routing, and semantic caching. Read for concepts even though you're hand-rolling the gateway.
 
 **Build (Project 4 — AI Gateway service)**
 - [ ] Scaffold a new Express service sitting in front of 2+ model providers (e.g. Anthropic + OpenAI, or two different model tiers from one provider).
@@ -369,6 +408,10 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 - [ ] Image generation via API (optional exposure, not a focus).
 - [ ] Understand this is "just a different input type to an API you already know how to call" — no new infra concepts beyond handling file uploads and larger payloads.
 
+**Resources (free)**
+- [GPT-4o Vision Guide](https://getstream.io/blog/gpt-4o-vision-guide/) and [Claude Vision API guide](https://claudeimplementation.com/blog/claude-vision-api) — free written tutorials with code, cover structured JSON extraction from images.
+- machinelearningplus's Multimodal AI tutorial — free, covers GPT-4o/Claude/Gemini vision APIs, chart analysis, receipt OCR.
+
 **Build**
 - [ ] Write a script that sends an image (a screenshot or scanned PDF page) to a vision-capable model and extracts structured data (e.g. `{invoice_number, date, total}`) as JSON.
 - [ ] Test with 3–4 varied documents/images to see failure modes (skewed scans, handwriting, low res).
@@ -387,6 +430,9 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 - [ ] Metadata filtering: narrowing vector search by structured fields (date, source, document type) before/after the similarity search.
 - [ ] Re-ranking: using a dedicated re-ranking model (e.g. Cohere Rerank) to re-order the top-N retrieved candidates by relevance before sending to the LLM.
 - [ ] Better chunking: semantic/recursive chunking vs your Month 1 fixed-size approach — chunking by document structure (headings, paragraphs) instead of raw character counts.
+
+**Resources (free)**
+- DeepLearning.AI's Advanced RAG short courses (LlamaIndex/Weaviate-based) — free to watch, cover re-ranking and metadata filtering concepts; implement against Cohere Rerank's free-tier API for the actual build.
 
 **Build**
 - [ ] Add a `tsvector` column + GIN index to your `chunks` table (Project 1) for full-text search.
@@ -446,6 +492,10 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 - [ ] Ollama: easiest path to running an open model locally/on a server — pull a model, run it, hit its local API.
 - [ ] vLLM: production-grade serving — higher throughput, batching, OpenAI-compatible API server.
 
+**Resources (free)**
+- [Ollama Tutorial for Beginners (2026) — YouTube](https://www.youtube.com/watch?v=fU38n-CH7ds) — free.
+- [vLLM official docs](https://docs.vllm.ai/) + DeepLearning.AI's "Fast and Efficient LLM Inference with vLLM" (free to watch) for the conceptual side.
+
 **Build**
 - [ ] Install Ollama on your EC2 instance (or locally), pull a small open model, confirm you can query it via its API.
 - [ ] Stand up vLLM in Docker serving the same or a similar model, and compare basic throughput/latency against Ollama.
@@ -469,6 +519,10 @@ This is the step-by-step expansion of [6-month-applied-ai-plan.md](6-month-appli
 **Learn**
 - [ ] Deployment patterns: multi-container deploys, environment/secrets management (AWS Secrets Manager or `.env` + parameter store), basic autoscaling on AWS (target-tracking scaling policies on EC2/ECS). Kubernetes explicitly optional — skip unless you specifically want the infra/LLMOps track.
 - [ ] Start AWS Certified AI Practitioner prep: go through the official exam guide section by section, focusing on GenAI/Bedrock vocabulary (this is the "fast, ATS-keyword" cert from the plan).
+
+**Resources (free)**
+- [AWS Skill Builder — AI Practitioner Exam Prep Plan](https://skillbuilder.aws/category/exam-prep/ai-practitioner) — official, completely free.
+- [Coursera — AWS Certified AI Practitioner Exam Prep](https://www.coursera.org/learn/aws-certified-ai-practitioner-exam-prep) — free to audit (cert requires payment).
 
 **Build**
 - [ ] Move secrets for at least one project out of plain `.env` files into a proper secrets manager.
