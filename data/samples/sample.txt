@@ -1,0 +1,12 @@
+pgvector is a PostgreSQL extension that adds a vector data type and similarity
+search. It lets you store embeddings directly in the database you already run,
+so you do not need a separate vector database for RAG.
+
+Retrieval-Augmented Generation (RAG) grounds a language model's answers in your
+own documents. The pipeline is: chunk the documents, embed each chunk into a
+vector, store the vectors, then at query time embed the question, find the
+nearest chunks by cosine distance, and pass those chunks to the model as context.
+
+Chunking matters: chunks that are too small lose surrounding context, while
+chunks that are too large dilute relevance and waste tokens. A common starting
+point is fixed-size chunks with a small overlap between neighbours.
